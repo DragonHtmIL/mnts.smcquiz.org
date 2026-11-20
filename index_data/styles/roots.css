@@ -1,0 +1,22 @@
+:root {
+  --color: #ffffffd9;
+  --background: #0c0c0cff;
+  --border: #3d3d3dff;
+  --borderb: #d3d3d3ff;
+  --transparent: transparent;
+  --opacity-color: #ffffff80;
+  --opacity-bg: #000000b3;
+  --box-shadow: #000000cc;
+  --subcolor: #0094ffff;
+  --hr-bg: #3d3d3dff;
+  --header-bg: #1b1d1dff;
+  --header-btns-bg: #444444ff;
+  --subcolor-opacity: #0094ff80;
+  --interact-color: #3fff00ff;
+  --import-error: #ff002aff;
+  --clumbs: #1b1d1dff;
+  --vesse-bg: #f5f5f5ff;
+  --shadow-text-hide: #000000ff;
+  /* Images */
+  --totop-icon: url('../textures/icons/totop.png');
+}

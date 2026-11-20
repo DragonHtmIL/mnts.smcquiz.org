@@ -1,0 +1,16 @@
+@media only screen and (max-width: 564px) {
+  .modal-content{
+    top: 5%;
+    right: 5%;
+    bottom: 5%;
+    left: 5%;
+  }
+  #searchBar2 {
+    min-width: 100% !important;
+  }
+  #applySearch2 {
+    border-left: solid 2px var(--border);
+    margin: 0 !important;
+    width: 100% !important;
+  }
+}
