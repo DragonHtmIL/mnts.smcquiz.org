@@ -316,7 +316,6 @@ span[for="hintTitle"] {
   width: 100%;
   z-index: 3;
   overflow-x: hidden;
-  margin-left: 100%;
   background-color: var(--background);
 }
 .table {

@@ -1,5 +1,5 @@
 function liLoader() {
-  for (var i = 0, l = listQuestions.length; i < l; i++) {
+  for (let i = 0; i < quizData.length; i++) {
     const li = document.createElement('li');
     const qTspan = document.createElement('span');
     const aTspan = document.createElement('span');
@@ -11,20 +11,24 @@ function liLoader() {
     qTspan.className = "label no-txt-select";
     qTspan.setAttribute("type", "left");
     qTspan.setAttribute("for", "questionTitle");
-    qTspan.innerHTML = "Question " + [i + 1] + ":";
+    qTspan.innerHTML = `Question ${i + 1}:`;
     aTspan.className = "label no-txt-select";
     aTspan.setAttribute("type", "right");
     aTspan.setAttribute("for", "answerTitle");
-    aTspan.innerHTML = "Answer " + [i + 1] + ":";
+    aTspan.innerHTML = `Answer ${i + 1}:`;
     question.className = "clumb question";
     question.setAttribute("type", "left");
-    question.innerHTML = listQuestions[i] + "?";
+    question.innerHTML = quizData[i].question + "?";
     answer.className = "clumb answer";
     answer.setAttribute("type", "right");
-    answer.innerHTML = listAnswers[i];
+    answer.innerHTML = quizData[i].answer;
     hint.setAttribute("for", "hintTitle");
-    hint.innerHTML = listHints[i] + ".";
-    li2.innerHTML = [i + 1] + ": <a>" + listQuestions[i] + "</a>";
+    if (quizData[i].hint === "") {
+      hint.innerHTML = "None hint for this question...";
+    }else{
+      hint.innerHTML = quizData[i].hint + ".";
+    }
+    li2.innerHTML = `${i + 1}: <a>${quizData[i].question}</a>`;
     document.getElementById("quizlist").appendChild(li);
     document.getElementById("quizlist2").appendChild(li2);
     li.appendChild(qTspan);
@@ -33,4 +37,4 @@ function liLoader() {
     li.appendChild(answer);
     li.appendChild(hint);
   }
-};
+}
