@@ -32,7 +32,7 @@ const quizData = [
   {//07
     question: "In theory, which of the following weapons has the speediest rounds",
     answer: "Railgun",
-    hint: ""
+    hint: "Three guesses whether you'll see the railgun on a mecha in Mecha City"
   },
   {//08
     question: "What was Lillian's occupation",
@@ -333,5 +333,10 @@ const quizData = [
     question: "Which of the following mechas has melee attack",
     answer: "Arthur",
     hint: "Arthur's giant sword has been intimidating foes since the Singularity War"
+  },
+  {//68
+    question: "What in the atmosphere can absorb ultraviolet rays",
+    answer: "Ozone layer",
+    hint: "Ozone can absorb ultraviolet rays and protect Earth"
   }
 ];

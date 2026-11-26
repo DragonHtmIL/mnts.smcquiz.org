@@ -13,46 +13,51 @@
   <body id="body">
     <div class="base-space" id="basespace"></div>
     <header class="header no-txt-select" id="header">
-      <div class="table no-txt-select" id="title">ERROR</div>
-      <input type="search" id="searchBar" class="searchBar button" placeholder="Type here for search" oninput="searchQuenstion('searchBar', 'quizlist');">
-      <button type="button" id="searchModalOpener" class="applyBar button emoji" style="display: none;"></button>
-      <div class="open-nav-menu" onclick="menuNavigator();">
-        <div class="menu-btn" id="opennavbtn" onclick="menuButton(this);">
-          <div class="bar1"></div>
-          <div class="bar2"></div>
-          <div class="bar3"></div>
+      <div class="top-header">
+        <div class="table no-txt-select" id="title">ERROR</div>
+        <input type="search" id="searchBar" class="searchBar button" placeholder="Type here for search" oninput="searchQuenstion('searchBar', 'quizlist');">
+        <button type="button" id="searchModalOpener" class="applyBar button emoji" style="display: none;" onclick="openModal('searchmodal');"></button>
+        <div class="open-nav-menu" onclick="openModal('menuNavigator');">
+          <div class="menu-btn" id="opennavbtn" onclick="menuButton('opennavbtn');">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+          </div>
         </div>
+        <span class="header-button go-to-top" onclick="topFunction()" id="totop">
+          <div class="scroll-bar" id="scrollBar"></div>
+          <div class="go-to-top-icon"></div>
+        </span>
       </div>
-      <span class="header-button go-to-top" onclick="topFunction()" id="totop">
-        <div class="scroll-bar" id="scrollBar"></div>
-        <div class="go-to-top-icon"></div>
-      </span>
       <div class="grid-container-titles">
         <button class="grid-title" type="left" id="qSector">Questions</button>
         <button class="grid-title" type="right" id="aSector">Answers</button>
       </div>
     </header>
-    <div id="menuNavigator" class="navigator no-txt-select" style="left: 100%;">
-      <div class="category">More</div>
-      <button class="button-mix text-left-fix top">Instructions:<br>
-          1. You can participate in one quiz per day. The more correct answers you have, the more prizes you get;<br>
-          2. You can take another quiz after 5am evry morning. You're kicked out if you can't finish the quiz;<br>
-          3. You get badges for 20, 88, and 200 correct answers.
-      </button>
-      <button class="button-mix text-left-fix bottom">Rewards:<br>
-          <span class="falture">0 corrects</span> • +5 Alpha coin <span class="falture">(min)</span><br>
-          <span class="rights">1 corrects</span> • +10 Alpha coin<br>
-          <span class="rights">2 corrects</span> • +5 Gold<br>
-          <span class="rights">3 corrects</span> • +5 Gold<br>
-          <span class="success">4 corrects</span> • +C Gift Box (Lollipop, Strawberry Cake, Lemon Soda)<span class="success">(max)</span>
-      </button>
-      <hr class="hr">
-      <div id="menuFooter" class="footer">
-        <div class="transparent-text">- - - - - - - - - - - - - - - - - - - -</div>
-        <div class="transparent-text">FREE PAGE BY: ArthurVesta</div>
-        <div class="transparent-text">CONTENT FROM: SMC</div>
-        <div class="transparent-text">2026. AV_MNTS All codes reserved.</div>
-        <div class="transparent-text">- - - - - - - - - - - - - - - - - - - -</div>
+    <div id="menuNavigator" class="modal no-txt-select" style="right: -100%;">
+      <span class="close-btn button" onclick="closeModal('menuNavigator');menuButton('opennavbtn');">&times;</span>
+      <div class="modal-content">
+        <div class="category">More</div>
+        <button class="button-mix text-left-fix top">Instructions:<br>
+            1. You can participate in one quiz per day. The more correct answers you have, the more prizes you get;<br>
+            2. You can take another quiz after 5am evry morning. You're kicked out if you can't finish the quiz;<br>
+            3. You get badges for 20, 88, and 200 correct answers.
+        </button>
+        <button class="button-mix text-left-fix bottom">Rewards:<br>
+            <span class="falture">0 corrects</span> • +5 Alpha coin <span class="falture">(min)</span><br>
+            <span class="rights">1 corrects</span> • +10 Alpha coin<br>
+            <span class="rights">2 corrects</span> • +5 Gold<br>
+            <span class="rights">3 corrects</span> • +5 Gold<br>
+            <span class="success">4 corrects</span> • +C Gift Box (Lollipop, Strawberry Cake, Lemon Soda)<span class="success">(max)</span>
+        </button>
+        <hr class="hr">
+        <div id="menuFooter" class="footer">
+          <div class="transparent-text">- - - - - - - - - - - - - - - - - - - -</div>
+          <div class="transparent-text">FREE PAGE BY: ArthurVesta</div>
+          <div class="transparent-text">CONTENT FROM: SMC</div>
+          <div class="transparent-text">2026. AV_MNTS All codes reserved.</div>
+          <div class="transparent-text">- - - - - - - - - - - - - - - - - - - -</div>
+        </div>
       </div>
     </div>
     <div id="main">
@@ -67,28 +72,26 @@
       <div class="transparent-text">- - - - - - - - - - - - - - - - - - - -</div>
     </div>
     <div class="base-space" id="basespace"></div>
-    <div id="searchmodal" class="modal">
-      <span id="closebtn" class="close-btn searchcbtn button">&times;</span>
+    <div id="searchmodal" class="modal" style="right: -100%;">
+      <span class="close-btn button" onclick="closeModal('searchmodal')">&times;</span>
       <div id="modalSearchContent" class="modal-content">
         <div class="category">Search for questions:</div>
         <input type="search" id="searchBar2" class="searchBar" oninput="searchQuenstion('searchBar2', 'quizlist', 'quizlist2');" placeholder="Type here for search">
-        <button type="submit" id="applySearch2" class="applyBar button" onclick=""></button>
         <br><br>
         <div>List of names:</div>
         <ul id="quizlist2" class="list-frame"></ul>
       </div>
     </div>
     <!---------- SCRIPTS & FUNCTIONS ---------->
+    <script src="index_data/scripts/modals.js"></script>
     <script src="index_data/scripts/icons.js"></script>
     <script src="index_data/scripts/lists.js"></script>
     <script src="index_data/scripts/header.js"></script>
-    <script src="index_data/scripts/menu.js"></script>
     <script src="index_data/scripts/totop.js"></script>
     <script src="index_data/scripts/scroll.js"></script>
     <script src="index_data/scripts/devices.js"></script>
     <script src="index_data/scripts/search.js"></script>
     <script src="index_data/scripts/list_loader.js"></script>
-    <script src="index_data/scripts/modal_search.js"></script>
     <script src="index_data/scripts/window_load.js"></script>
     <script src="index_data/scripts/window_scroll.js"></script>
     <script src="index_data/scripts/sw_loader.js"></script>
